@@ -10,8 +10,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+
   "license": "ISC",
-  "description": ""
+  "author": "Felipe C. Trevisol",
+  "description": "A Simple Chalend CRUD, using AWS Lambda.",
+  "keywords": ["aws", "lambda", "simple node", "typescript"]
 }
