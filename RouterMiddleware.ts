@@ -6,7 +6,7 @@ import PutClientRouter from "./client/route/PutClientRouter";
 import PostClientRouter from "./client/route/PostClientRouter";
 import DeleteClienteRouter from "./client/route/DeleteClienteRouter";
 
-export default class RouterMidleware {
+export default class RouterMiddleware {
     private readonly routes: Router[] = [
         new GetClientRouter(this.request, this.response),
         new PutClientRouter(this.request, this.response),

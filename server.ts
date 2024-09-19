@@ -2,10 +2,10 @@ import {Server} from 'node:http';
 import {createServer} from 'node:http';
 import {ServerResponse} from 'node:http';
 import {IncomingMessage} from 'node:http';
-import RouterMidleware from "./RouterMiddleware";
+import RouterMiddleware from "./RouterMiddleware";
 
 const server: Server = createServer((request: IncomingMessage, response: ServerResponse) => {
-    const route: RouterMidleware = new RouterMidleware(request, response);
+    const route: RouterMiddleware = new RouterMiddleware(request, response);
     route.httpApi().run();
 });
 
