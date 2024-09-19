@@ -2,18 +2,24 @@
   "name": "chalend",
   "version": "1.0.0",
   "main": "./build/server.js",
-
   "scripts": {
     "preinstall": "nvm use",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "license": "ISC",
   "author": "Felipe C. Trevisol",
   "description": "A Simple Chalend CRUD, using AWS Lambda.",
-  "keywords": ["aws", "lambda", "simple node", "typescript"],
-
+  "keywords": [
+    "aws",
+    "lambda",
+    "simple node",
+    "typescript"
+  ],
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
+    "babel-jest": "^29.7.0",
     "typescript": "^5.6.2"
   }
 }
