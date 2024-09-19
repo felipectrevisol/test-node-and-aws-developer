@@ -7,5 +7,5 @@
         "noUnusedLocals": true
     },
     
-    "include": ["./server.ts", "client/**/*.ts"]
+    "include": ["./*.ts", "client/**/*.ts"]
 }
