@@ -5,7 +5,9 @@
 
   "scripts": {
     "test": "jest",
-    "preinstall": "nvm use"
+    "build": "tsc",
+    "preinstall": "nvm use",
+    "start": "npm run build && node ./build/server.js"
   },
 
   "license": "ISC",
