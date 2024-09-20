@@ -4,11 +4,10 @@ import Router, {HttpStatusCode, HttpMethod} from "../../Router";
 
 export default class GetClientRouter extends Router {
 
-    constructor(request: IncomingMessage, response: ServerResponse) {
-        super("/client", HttpMethod.GET, request, response);
+    constructor(request: IncomingMessage, response: ServerResponse, path?: string) {
+        super(`client${path}`, HttpMethod.GET, request, response);
         {
-            this.routers.push(new GetClientRouter("/{name}", HttpMethod.GET, request, response));
-            this.routers.push(new GetClientRouter("/all/{active}", HttpMethod.GET, request, response));
+            this.routers.push(new GetClientRouter(request, response, "/{name}"));
         }
     }
 

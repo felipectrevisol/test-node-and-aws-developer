@@ -13,13 +13,14 @@ export enum HttpMethod {
     POST = "POST",
     DELETE = "DELETE"
 }
-export default class Router {
+
+export default abstract class Router {
 
     protected readonly routers: Router[] = [];
 
-    constructor(
-        protected readonly path: string,
-        protected readonly method: HttpMethod,
+    protected constructor(
+        protected path: string,
+        protected readonly httpMethod: HttpMethod,
         protected readonly request: IncomingMessage,
         protected readonly response: ServerResponse
     ){}
