@@ -20,7 +20,7 @@ export default abstract class Router {
 
     protected constructor(
         public readonly path: string,
-        protected readonly httpMethod: HttpMethod,
+        public readonly httpMethod: HttpMethod,
         protected readonly request: IncomingMessage,
         protected readonly response: ServerResponse
     ){}

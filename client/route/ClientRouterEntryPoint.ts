@@ -30,8 +30,9 @@ export default class ClientRouterEntryPoint extends EntryPoint {
     }
 
     public route(): Router {
-        const route: Router | undefined = this.routers.find((route: Router) =>
-            route.path.match(this.request.url!.toString()));
-        return route === undefined ? this.routers[0] : route;
+        const router: Router | undefined = this.routers.find((route: Router) =>
+                 route.path.includes(this.request.url!.toString()) &&
+                 route.httpMethod.toString().includes(this.request.method!.toString()))
+        return router === undefined ? this.routers[4] : router;
     }
 }
