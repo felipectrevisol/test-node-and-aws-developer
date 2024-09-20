@@ -5,10 +5,7 @@ import Router, {HttpStatusCode, HttpMethod} from "../../Router";
 export default class GetClientRouter extends Router {
 
     constructor(request: IncomingMessage, response: ServerResponse, path?: string) {
-        super(`client${path}`, HttpMethod.GET, request, response);
-        {
-            this.routers.push(new GetClientRouter(request, response, "/{name}"));
-        }
+        super(`client`, HttpMethod.GET, request, response);
     }
 
     public run(): void {
