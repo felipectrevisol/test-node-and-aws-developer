@@ -3,6 +3,7 @@ import {ServerResponse} from 'node:http';
 import {IncomingMessage} from 'node:http';
 import EntryPoint from '../../EntryPoint';
 import GetClientRouter from "./GetClientRouter";
+import NotFound404Router from "../../NotFound404Router";
 
 export default class ClientRouterEntryPoint extends EntryPoint {
 
@@ -21,6 +22,6 @@ export default class ClientRouterEntryPoint extends EntryPoint {
             route.path.test(this.request.url!.toString()) &&
             route.httpMethod.toString().includes(this.request.method!.toString()));
 
-        return router === undefined ? this.routers[4] : router;
+        return router === undefined ? new NotFound404Router(this.request, this.response) : router;
     }
 }
