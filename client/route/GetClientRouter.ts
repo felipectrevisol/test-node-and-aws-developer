@@ -4,8 +4,8 @@ import Router, {HttpStatusCode, HttpMethod} from "../../Router";
 
 export default class GetClientRouter extends Router {
 
-    constructor(request: IncomingMessage, response: ServerResponse, path?: string) {
-        super(`client${path === undefined ? "" : path}`, HttpMethod.GET, request, response);
+    constructor(request: IncomingMessage, response: ServerResponse, path: RegExp) {
+        super(path, HttpMethod.GET, request, response);
     }
 
     public run(): void {

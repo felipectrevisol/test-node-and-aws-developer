@@ -7,7 +7,7 @@ import ClientRouterEntryPoint from "./client/route/ClientRouterEntryPoint";
 export default class ApiGateway {
     private readonly entryPoints: EntryPoint[] = [];
 
-    constructor(readonly request: IncomingMessage, readonly response: ServerResponse){
+    constructor(private readonly request: IncomingMessage, private readonly response: ServerResponse) {
         this.entryPoints.push(new ClientRouterEntryPoint(this.request, this.response));
     }
 

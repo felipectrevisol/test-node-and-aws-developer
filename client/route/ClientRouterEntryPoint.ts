@@ -3,9 +3,6 @@ import {ServerResponse} from 'node:http';
 import {IncomingMessage} from 'node:http';
 import EntryPoint from '../../EntryPoint';
 import GetClientRouter from "./GetClientRouter";
-import PutClientRouter from "./PutClientRouter";
-import PostClientRouter from "./PostClientRouter";
-import DeleteClienteRouter from "./DeleteClienteRouter";
 
 export default class ClientRouterEntryPoint extends EntryPoint {
 
@@ -15,24 +12,18 @@ export default class ClientRouterEntryPoint extends EntryPoint {
         super();
         {
             this.starHttpGetRouters();
-            this.routers.push(new PutClientRouter(this.request, this.response));
-            this.routers.push(new PostClientRouter(this.request, this.response));
-            this.routers.push(new DeleteClienteRouter(this.request, this.response));
         }
     }
 
     private starHttpGetRouters(): void {
-        this.routers.push(new GetClientRouter(this.request, this.response));
-        this.routers.push(new GetClientRouter(this.request, this.response, "/all"));
-        this.routers.push(new GetClientRouter(this.request, this.response, "/{name}"));
-        this.routers.push(new GetClientRouter(this.request, this.response, "/active"));
-        this.routers.push(new GetClientRouter(this.request, this.response, "/birthday"));
+        this.routers.push(new GetClientRouter(this.request, this.response, /client+[/]all+/gi));
+        this.routers.push(new GetClientRouter(this.request, this.response, /client/gi));
     }
 
     public route(): Router {
         const router: Router | undefined = this.routers.find((route: Router) =>
-                 route.path.includes(this.request.url!.toString()) &&
-                 route.httpMethod.toString().includes(this.request.method!.toString()))
+            route.path.test(this.request.url!.toString()) &&
+            route.httpMethod.toString().includes(this.request.method!.toString()))
         return router === undefined ? this.routers[4] : router;
     }
 }
