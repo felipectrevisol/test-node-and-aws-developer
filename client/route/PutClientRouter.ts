@@ -4,8 +4,8 @@ import Router, {HttpStatusCode, HttpMethod} from "../../Router";
 
 export default class PutClientRouter extends Router {
 
-    constructor(request: IncomingMessage, response: ServerResponse) {
-        super("/client", HttpMethod.PUT, request, response);
+    constructor(request: IncomingMessage, response: ServerResponse, path?: string) {
+        super(`client${path}`, HttpMethod.GET, request, response);
     }
 
     public run(): void {
