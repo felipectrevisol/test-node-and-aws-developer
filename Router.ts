@@ -15,13 +15,14 @@ export enum HttpMethod {
 }
 export default class Router {
 
+    protected readonly routers: Router[] = [];
+
     constructor(
         protected readonly path: string,
         protected readonly method: HttpMethod,
         protected readonly request: IncomingMessage,
         protected readonly response: ServerResponse
-    ) {
-    }
+    ){}
 
     public run(): void {}
 }
