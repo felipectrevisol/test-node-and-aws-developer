@@ -6,7 +6,6 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --watch",
-    "preinstall": "nvm use < .nvmrc",
     "start": "npm run build && node ./build/server.js"
   },
 

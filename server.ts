@@ -11,8 +11,6 @@ const server: Server = createServer((request: IncomingMessage, response: ServerR
 });
 
 const PORT: number = 8000;
-const HOST: string = "127.0.0.1";
-
-server.listen(PORT, HOST, () => {
-    console.log(`Server HOST: ${HOST} Listening on Port: ${PORT}`);
+server.listen(PORT, () => {
+    console.log(`Server Listening on Port: ${PORT}`);
 });
