@@ -19,7 +19,7 @@ export default abstract class Router {
     protected readonly routers: Router[] = [];
 
     protected constructor(
-        protected readonly path: string,
+        public readonly path: string,
         protected readonly httpMethod: HttpMethod,
         protected readonly request: IncomingMessage,
         protected readonly response: ServerResponse

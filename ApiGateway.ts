@@ -1,17 +1,12 @@
 import Router from "./Router";
+import EntryPoint from "./EntryPoint";
 import {ServerResponse} from 'node:http';
 import {IncomingMessage} from 'node:http';
-import GetClientRouter from "./client/route/GetClientRouter";
-import PutClientRouter from "./client/route/PutClientRouter";
-import PostClientRouter from "./client/route/PostClientRouter";
-import DeleteClienteRouter from "./client/route/DeleteClienteRouter";
+import ClientRouterEntryPoint from "./client/route/ClientRouterEntryPoint";
 
 export default class ApiGateway {
-    private readonly routes: Router[] = [
-        new GetClientRouter(this.request, this.response),
-        new PutClientRouter(this.request, this.response),
-        new PostClientRouter(this.request, this.response),
-        new DeleteClienteRouter(this.request, this.response)
+    private readonly entryPoints: EntryPoint[] = [
+        new ClientRouterEntryPoint(this.request, this.response),
     ];
 
     constructor(
@@ -20,6 +15,6 @@ export default class ApiGateway {
     ){}
 
     public http(): Router {
-        return this.routes[3];
+        return this.entryPoints[0].route();
     }
 }

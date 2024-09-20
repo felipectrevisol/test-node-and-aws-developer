@@ -5,11 +5,11 @@ import Router, {HttpStatusCode, HttpMethod} from "../../Router";
 export default class GetClientRouter extends Router {
 
     constructor(request: IncomingMessage, response: ServerResponse, path?: string) {
-        super(`client`, HttpMethod.GET, request, response);
+        super(`client${path === undefined ? "" : path}`, HttpMethod.GET, request, response);
     }
 
     public run(): void {
         this.response.writeHead(HttpStatusCode.OK, {"Content-Type": "application/json"});
-        this.response.end("{\"name\": \"Get Josh\"}");
+        this.response.end(`{\"${this.path}\": \"Get Josh\"}`);
     }
 }
