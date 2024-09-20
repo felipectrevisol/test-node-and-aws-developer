@@ -1,20 +1,10 @@
-import { describe, test, expect } from "@jest/globals"
+import {describe, test, expect} from "@jest/globals"
 
-describe('Route Http API', () => {
+describe('Match URL With Regex', () => {
 
-    test('Get Http Route', () => {
-        expect(2 + 3).toEqual(5)
-    });
-
-    test('Put Http Route', () => {
-        expect(2 + 3).toEqual(5)
-    });
-
-    test('Post Http Route', () => {
-        expect(2 + 3).toEqual(5)
-    });
-
-    test('Delete Http Route', () => {
-        expect(2 + 3).toEqual(5)
+    test('Match client/all', () => {
+        const uri = 'client/all';
+        const path: RegExp = /client+[/]all+/gi;
+        expect(path.test(uri)).toBe(true);
     });
 })
