@@ -8,6 +8,6 @@ export interface Event {
 }
 
 export default function handler (event: Event, context: any) {
-    const api: ApiGateway = new ApiGateway(event.request, event.response);
-    api.http().run();
+    const entrypoint: ApiGateway = new ApiGateway(event.request, event.response);
+    entrypoint.http().run();
 }
