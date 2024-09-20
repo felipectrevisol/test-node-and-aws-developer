@@ -6,7 +6,7 @@ import PutClientRouter from "./client/route/PutClientRouter";
 import PostClientRouter from "./client/route/PostClientRouter";
 import DeleteClienteRouter from "./client/route/DeleteClienteRouter";
 
-export default class RouterMiddleware {
+export default class ApiGateway {
     private readonly routes: Router[] = [
         new GetClientRouter(this.request, this.response),
         new PutClientRouter(this.request, this.response),
@@ -19,7 +19,7 @@ export default class RouterMiddleware {
         private readonly response: ServerResponse
     ){}
 
-    public httpApi(): Router {
+    public http(): Router {
         return this.routes[3];
     }
 }
