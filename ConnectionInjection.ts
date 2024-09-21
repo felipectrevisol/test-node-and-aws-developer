@@ -1,7 +1,7 @@
-import ClientRepository from "./client/ClientRepository";
+import Repository from "./client/repository/Repository";
 
-function connection(): ClientRepository {
-    return new ClientRepository();
+function connection(): Repository {
+    return new Repository();
 }
 
 export default connection();

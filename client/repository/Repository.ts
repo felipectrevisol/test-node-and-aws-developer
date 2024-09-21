@@ -1,11 +1,12 @@
-import Client from "./Client";
-import Adder from "./repository_action/Adder";
-import Finder from "./repository_action/Finder";
-import Remover from "./repository_action/Remover";
-import Updater from "./repository_action/Updater";
+import Adder from "./Adder";
+import Client from "../Client";
+import Finder from "./Finder";
+import Remover from "./Remover";
+import Updater from "./Updater";
 
-export default class ClientRepository implements Adder, Finder, Updater, Remover {
-    
+
+export default class Repository implements Adder, Finder, Updater, Remover {
+
     private repository: Client[] = [];
 
     constructor() {

@@ -1,9 +1,9 @@
 import Client from "../../client/Client";
 import Address from "../../client/Address";
 import Contact from "../../client/Contact";
-import {describe, test, expect} from "@jest/globals"
-import ClientRepository from "../../client/ClientRepository";
-import Updater from "../../client/repository_action/Updater";
+import {describe, test, expect} from "@jest/globals";
+import Updater from "../../client/repository/Updater";
+import Repository from "../../client/repository/Repository";
 
 describe('Client Repository', () => {
 
@@ -47,7 +47,7 @@ describe('Client Repository', () => {
     })
 
     test('Add a Client', () => {
-        const reposiroty: ClientRepository = new ClientRepository();
+        const reposiroty: Repository = new Repository();
         {
             reposiroty.add(joshClient);
             reposiroty.add(joshClient);
@@ -58,7 +58,7 @@ describe('Client Repository', () => {
     });
 
     test('Find a Client', () => {
-        const reposiroty: ClientRepository = new ClientRepository();
+        const reposiroty: Repository = new Repository();
         {
             reposiroty.add(joshClient);
             reposiroty.add(amyClient);
@@ -69,7 +69,7 @@ describe('Client Repository', () => {
     });
 
     test('Remove a Client', () => {
-        const reposiroty: ClientRepository = new ClientRepository();
+        const reposiroty: Repository = new Repository();
         {
             reposiroty.add(joshClient);
             reposiroty.add(amyClient);
@@ -82,7 +82,7 @@ describe('Client Repository', () => {
     });
 
     test('Alter a Client', () => {
-        const reposiroty: ClientRepository = new ClientRepository();
+        const reposiroty: Repository = new Repository();
         {
             reposiroty.add(amyClient);
             reposiroty.add(joshClient);

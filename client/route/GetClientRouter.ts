@@ -3,7 +3,7 @@ import Address from '../Address';
 import Contact from '../Contact';
 import {ServerResponse} from 'node:http';
 import {IncomingMessage} from 'node:http';
-import Finder from "../repository_action/Finder";
+import Finder from '../repository/Finder';
 import connection from "../../ConnectionInjection";
 import Router, {HttpStatusCode, HttpMethod} from "../../Router";
 
