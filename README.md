@@ -96,7 +96,13 @@ export default function handler (event: Event, context: any) {
 
 ##### ApiGateway.ts
 
-Usei o Strategy Pattern para escalar a implementação e dar a ela a habilidade de receber novos EntryPoints.
+Usei o Strategy Pattern para escalar a implementação e dar a ela a habilidade de receber novos EntryPoints de forma dinâmica.
+
+```
+export default abstract class EntryPoint {
+    public abstract route(): Router;
+}
+```
 
 ```
 export default class ApiGateway {
