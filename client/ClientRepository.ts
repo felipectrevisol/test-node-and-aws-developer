@@ -1,36 +1,40 @@
 import Client from "./Client";
+import Adder from "./repository_action/Adder";
+import Finder from "./repository_action/Finder";
+import Remover from "./repository_action/Remover";
+import Updater from "./repository_action/Updater";
 
-export default class ClientRepository {
+export default class ClientRepository implements Adder, Finder, Updater, Remover {
     
     private repository: Client[] = [];
 
     constructor() {
     }
 
-    add(client: Client) {
+    public add(client: Client): void {
         this.repository.push(client);
     }
 
-    get clients(): ReadonlyArray<Client> {
+    public get clients(): ReadonlyArray<Client> {
         return this.repository;
     }
 
-    bring(client: Client): Client | undefined {
+    public bring(client: Client): Client | undefined {
         const finded: Client | undefined = this.repository.find(wanted => wanted.name === client.name);
         return finded === undefined ? undefined : finded;
     }
 
-    alter(client: Client): ClientRepository {
+    public alter(client: Client): Updater {
         this.delete(client);
         return this;
     }
 
-    toThisNewOne(client: Client): boolean {
+    public toThisNewOne(client: Client): boolean {
         this.add(client);
         return true;
     }
 
-    delete(client: Client): void {
+    public delete(client: Client): void {
         this.repository = this.repository.filter(wanted =>
             wanted.name !== client.name);
     }
