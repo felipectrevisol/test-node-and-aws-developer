@@ -34,6 +34,13 @@ DELETE http://localhost:4000/client
 
 [GET, POST, PUT, DELETE] http://localhost:4000/non-existent/route -> rota 404.
 ```
+
+##### Importação do JSON do Postman
+
+```
+Challenged.postman_collection.json
+```
+
 ##### Monitoramento da Aplicação com Docker
 
 ```
