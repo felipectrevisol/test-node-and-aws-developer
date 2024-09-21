@@ -23,7 +23,7 @@ Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=10m local/lambda:1.1.1-alpha
 Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=10m felipecantotrevisol/lambda:1.1.1-alpha
 ```
 
-#### Testando no Postman
+### Testando no Postman
 
 ```
 GET http://localhost:4000/client
