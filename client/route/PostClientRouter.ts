@@ -18,7 +18,7 @@ export default class PostClientRouter extends Router {
         this.adder!.add(new Client("Josh", false, new Date(), new Array<Address>(), new Array<Contact>()));
         {
             this.response.writeHead(HttpStatusCode.Created, {"Content-Type": "application/json"});
-            this.response.end("Client add with sucess!");
+            this.response.end(JSON.stringify({"message": "Client add with sucess!"}));
         }
     }
 }
