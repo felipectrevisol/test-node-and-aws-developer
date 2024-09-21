@@ -46,3 +46,15 @@ Challenged.postman_collection.json
 ```
 docker stats
 ```
+
+## Executando com o NPM
+
+```
+npm run start
+```
+
+##### Acesso via Navegador
+
+```
+http://localhost:8000/client/all
+```
