@@ -96,6 +96,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "404 Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/another/route",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"another",
+						"route"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
