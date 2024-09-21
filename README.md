@@ -72,3 +72,42 @@ npm test
 > [!NOTE]
 > Em seguida digitar a letra "a" para executar todos os testes unitários.
 > Para sair do ambiente de execução de testes digitar "q".
+
+## Breaking Down
+
+##### server.js
+
+No código abaixo simulei o event do AWS Lambda para me aproximar ao máximo da realidade.
+
+```
+const event: Event = {request: request, response: response};
+const context: any = null;
+handler(event, context);
+```
+
+##### aws.lambda.mock.idea.ts
+
+```
+export default function handler (event: Event, context: any) {
+	const entrypoint: ApiGateway = new ApiGateway(event.request, event.response);
+	entrypoint.http().run();
+}
+```
+
+##### ApiGateway.ts
+
+Usei o Strategy Pattern para escalar a implementação e dar a ela a habilidade de receber novos EntryPoints.
+
+```
+export default class ApiGateway {
+    private readonly entryPoints: EntryPoint[] = [];
+
+    constructor(private readonly request: IncomingMessage, private readonly response: ServerResponse) {
+        this.entryPoints.push(new ClientRouterEntryPoint(this.request, this.response));
+    }
+
+    public http(): Router {
+        return this.entryPoints[0].route();
+    }
+}
+```
