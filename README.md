@@ -49,7 +49,7 @@ docker stats
 
 ## Executando com o NPM
 
-No diretório raiz do projeto executar a linha de comando abaixo.
+No diretório raiz do projeto executar a linha de comando abaixo:
 
 ```
 npm run start
