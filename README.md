@@ -67,6 +67,8 @@ No diretório raiz do projeto executar a linha de comando abaixo:
 
 ```
 npm test
-em seguida digitar a letra "a" para executar todos os testes unitários.
-para sair do ambiente de execução de testes digitar q.
 ```
+
+> [!NOTE]
+> Em seguida digitar a letra "a" para executar todos os testes unitários.
+> Para sair do ambiente de execução de testes digitar q.
