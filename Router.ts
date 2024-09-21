@@ -25,5 +25,10 @@ export default abstract class Router {
         protected readonly response: ServerResponse
     ){}
 
+    public isThisTheRightOne(): boolean {
+        return this.path.test(this.request.url!.toString()) &&
+        this.httpMethod.toString().includes(this.request.method!.toString());
+    }
+
     public run(): void {}
 }

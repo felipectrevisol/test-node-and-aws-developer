@@ -10,6 +10,6 @@ export default class GetClientRouter extends Router {
 
     public run(): void {
         this.response.writeHead(HttpStatusCode.OK, {"Content-Type": "application/json"});
-        this.response.end(`{\"${this.path}\": \"Get Josh\"}`);
+        this.response.end(JSON.stringify({path: `${this.path}`, method: `${this.httpMethod}`}));
     }
 }

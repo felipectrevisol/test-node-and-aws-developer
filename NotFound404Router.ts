@@ -9,7 +9,15 @@ export default class NotFound404Router extends Router {
     }
 
     public run(): void {
+        const body: string = JSON.stringify({
+            404: "Resource Not Found.",
+            GoTo: [
+                "http:localhost:client/",
+                "http:localhost:client/all",
+            ]
+        });
+
         this.response.writeHead(HttpStatusCode.NotFound, {"Content-Type": "application/json"});
-        this.response.end(`{\"404\": \"Resource Not Found.\", "go-to": \[\"client/\", \"client/all\"]}`);
+        this.response.end(body);
     }
 }
