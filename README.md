@@ -142,3 +142,42 @@ export default class ClientRouterEntryPoint extends EntryPoint {
     }
 }
 ```
+
+##### Router.ts
+
+```
+export default abstract class Router {
+
+    protected readonly routers: Router[] = [];
+
+    protected constructor(
+        public readonly path: RegExp,
+        public readonly httpMethod: HttpMethod,
+        protected readonly request: IncomingMessage,
+        protected readonly response: ServerResponse
+    ){}
+
+    public isThisTheRightOne(): boolean {
+        return this.path.test(this.request.url!.toString()) &&
+        this.httpMethod.toString().includes(this.request.method!.toString());
+    }
+
+    public run(): void {}
+}
+```
+
+##### Ex. de Implementação de Rotas:
+
+```
+export default class GetClientRouter extends Router {
+
+    constructor(request: IncomingMessage, response: ServerResponse, path: RegExp) {
+        super(path, HttpMethod.GET, request, response);
+    }
+
+    public run(): void {
+        this.response.writeHead(HttpStatusCode.OK, {"Content-Type": "application/json"});
+        this.response.end(JSON.stringify({path: `${this.path}`, method: `${this.httpMethod}`}));
+    }
+}
+```
