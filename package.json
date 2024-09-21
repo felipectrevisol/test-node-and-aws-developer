@@ -11,14 +11,8 @@
 
   "license": "ISC",
   "author": "Felipe C. Trevisol",
-  "description": "A Simple Chalend CRUD, using AWS Lambda.",
-
-  "keywords": [
-    "aws",
-    "lambda",
-    "simple node",
-    "typescript"
-  ],
+  "description": "A Simple Challenge CRUD, using AWS Lambda.",
+  "keywords": ["aws", "lambda", "simple node", "typescript"],
 
   "devDependencies": {
     "jest": "^29.7.0",
@@ -31,5 +25,10 @@
     "@tsconfig/node20": "^20.1.4",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-typescript": "^7.24.7"
+  },
+
+  "dependencies": {
+    "dynamoose": "^4.0.1",
+    "@aws-sdk/client-dynamodb": "^3.656.0"
   }
 }
