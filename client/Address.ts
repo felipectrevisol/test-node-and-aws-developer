@@ -1,3 +1,3 @@
 export default class Address {
-    constructor () {}
+    constructor (public  readonly street?: string) {}
 }
