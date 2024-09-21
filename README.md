@@ -145,6 +145,8 @@ export default class ClientRouterEntryPoint extends EntryPoint {
 
 ##### Router.ts
 
+Usei o Strategy Pattern para escalar a implementação das rotas e também Chain of Responsibility Pattern para o Router delegar a requisição a implementação correta de forma dinâmica.
+
 ```
 export default abstract class Router {
 
