@@ -117,3 +117,28 @@ export default class ApiGateway {
     }
 }
 ```
+
+##### Exemplo de EntryPoint | ClientRouterEntryPoint.ts
+
+```
+export default class ClientRouterEntryPoint extends EntryPoint {
+
+    private readonly routers: GetClientRouter[] = [];
+
+    constructor(private request: IncomingMessage, private response: ServerResponse) {
+        super();
+        {
+            this.routers.push(new GetClientRouter(this.request, this.response, /client+[/]all+/gi));
+            this.routers.push(new GetClientRouter(this.request, this.response, /client/gi));
+            this.routers.push(new PutClientRouter(this.request, this.response, /client/gi));
+            this.routers.push(new PostClientRouter(this.request, this.response, /client/gi));
+            this.routers.push(new DeleteClienteRouter(this.request, this.response, /client/gi));
+        }
+    }
+
+    public route(): Router {
+        const router: Router | undefined = this.routers.find((route: Router) => route.isThisTheRightOne());
+        return router === undefined ? new NotFound404Router(this.request, this.response) : router;
+    }
+}
+```
