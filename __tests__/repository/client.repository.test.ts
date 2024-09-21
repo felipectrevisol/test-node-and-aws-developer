@@ -3,6 +3,7 @@ import Address from "../../client/Address";
 import Contact from "../../client/Contact";
 import {describe, test, expect} from "@jest/globals"
 import ClientRepository from "../../client/ClientRepository";
+import Updater from "../../client/repository_action/Updater";
 
 describe('Client Repository', () => {
 
@@ -85,8 +86,10 @@ describe('Client Repository', () => {
         {
             reposiroty.add(amyClient);
             reposiroty.add(joshClient);
-            reposiroty.alter(amyClient).toThisNewOne(anotherAmyClient);
         }
+
+        const update: Updater = reposiroty;
+        update.alter(amyClient).toThisNewOne(anotherAmyClient);
 
         expect(reposiroty.bring(anotherAmyClient)?.address[0]?.street).toBe("Rua da Oliveiras.");
     });
