@@ -1,4 +1,4 @@
-import Client from "./Client";
+import Client from "../Client";
 
 export default interface Updater {
     alter(client: Client): Updater;
