@@ -1,7 +1,7 @@
 # AWS Lambada Mock Ideia - 1.2.2-alpha
 
 > [!NOTE]
-> Esta implementação é leve o suficiente para rodar com 0.5 de CPU e 6 Mb de RAM.
+> Esta implementação pode rodar com 0.5 de CPU e 6 Mb de RAM.
 
 ## Docker
 
