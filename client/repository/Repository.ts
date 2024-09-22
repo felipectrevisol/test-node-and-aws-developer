@@ -1,6 +1,6 @@
 import Adder from "./Adder";
-import Client from "../Client";
 import Finder from "./Finder";
+import Client from "../Client";
 import Remover from "./Remover";
 import Updater from "./Updater";
 

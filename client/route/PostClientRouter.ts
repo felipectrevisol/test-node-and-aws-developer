@@ -1,6 +1,4 @@
 import Client from "../Client";
-import Address from "../Address";
-import Contact from "../Contact";
 import Adder from "../repository/Adder";
 import {ServerResponse} from 'node:http';
 import {IncomingMessage} from 'node:http';
@@ -15,10 +13,18 @@ export default class PostClientRouter extends Router {
     }
 
     public run(): void {
-        this.adder!.add(new Client("Josh", false, new Date(), new Array<Address>(), new Array<Contact>()));
-        {
-            this.response.writeHead(HttpStatusCode.Created, {"Content-Type": "application/json"});
-            this.response.end(JSON.stringify({"message": "Client add with sucess!"}));
-        }
+        let body: any = [];
+
+        this.request.on('data', chunk => body.push(chunk))
+            .on('end', () => {
+                body = JSON.parse(Buffer.concat(body).toString());
+                const client: Client = new Client(body.name, body.active, new Date(body.dateOfBirth), body.address, body.contacts);
+                this.adder!.add(client);
+
+            });
+        
+        this.response.writeHead(HttpStatusCode.Created, {"Content-Type": "application/json"});
+        this.response.end(JSON.stringify({"message": "Client add with sucess!"}));
+
     }
 }
