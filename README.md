@@ -300,6 +300,7 @@ Neste projeto foram usados os conhecimentos de:
 - Git e GitHub.
 - Postman.
 - Streaming.
+- Semantic Versioning.
 - Monitoramento de aplicação.
 - Configuração de uso de recursos de máquina.
 - Boas práticas de codificação e também de commit´s.
