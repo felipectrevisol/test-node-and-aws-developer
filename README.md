@@ -278,7 +278,7 @@ public run(): void {
         this.response.end(JSON.stringify({"message": "Client add with success!"}));
 ```
 
-## Melhorias que Devem ser Feitas
+## Melhorias e Adições que Devem ser Feitas
 
 - Aperfeiçoar o reconhecimento de das URL´s.
 - Implantar o armazenamento de dados com DynamoDb.
