@@ -20,7 +20,7 @@ docker pull felipecantotrevisol/lambda:1.2.2-alpha
 ##### Executando o Container Local
 
 ```
-docker run -d -p 4000:8000 --cpus=0.5 --memory=10m <image-name>
+docker run -d -p 4000:8000 --cpus=0.5 --memory=6m <image-name>
 Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=6m local/lambda:1.2.2-alpha
 Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=6m felipecantotrevisol/lambda:1.2.2-alpha
 ```
