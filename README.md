@@ -277,3 +277,25 @@ public run(): void {
         this.response.writeHead(HttpStatusCode.Created, {"Content-Type": "application/json"});
         this.response.end(JSON.stringify({"message": "Client add with success!"}));
 ```
+
+## Melhorias que Devem ser Feitas
+
+- Aperfeiçoar o reconhecimento de das URL´s.
+- Implantar o armazenamento de dados com DynamoDb.
+- Implementar testes para a API de Rotas e tudo o que está correlacionado a ela.
+
+# Notas Finais
+
+Neste projeto foram usados os conhecimentos de:
+- Orientação a Objetos
+- Clean Code.
+- Escrita de Testes.
+- Design Pattern´s.
+- SOLID.
+- Docker.
+- Git e GitHub.
+- Postman.
+- Streaming.
+- Monitoramento de aplicação.
+- Configuração de uso de recursos de máquina.
+- Boas práticas de codificação e também de commit´s.
