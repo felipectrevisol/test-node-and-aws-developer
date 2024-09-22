@@ -1,7 +1,7 @@
 # AWS Lambada Mock Ideia - 1.2.2-alpha
 
 > [!NOTE]
-> Esta implementação é leve o suficiente para rodar com 0.5 de CPU e 5 Mb de RAM.
+> Esta implementação é leve o suficiente para rodar com 0.5 de CPU e 6 Mb de RAM.
 
 ## Docker
 
@@ -21,8 +21,8 @@ docker pull felipecantotrevisol/lambda:1.2.2-alpha
 
 ```
 docker run -d -p 4000:8000 --cpus=0.5 --memory=10m <image-name>
-Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=5m local/lambda:1.2.2-alpha
-Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=5m felipecantotrevisol/lambda:1.2.2-alpha
+Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=6m local/lambda:1.2.2-alpha
+Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=6m felipecantotrevisol/lambda:1.2.2-alpha
 ```
 
 ### Testando no Postman
