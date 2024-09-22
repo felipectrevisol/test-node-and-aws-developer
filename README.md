@@ -282,6 +282,7 @@ public run(): void {
 
 - Aperfeiçoar o reconhecimento de das URL´s.
 - Implantar o armazenamento de dados com DynamoDb.
+- Escrever o AWS Cloud​Formation.
 - Implementar testes para a API de Rotas e tudo o que está correlacionado a ela.
 
 # Notas Finais
