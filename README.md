@@ -295,6 +295,7 @@ Neste projeto foram usados os conhecimentos de:
 - Escrita de Testes.
 - Design Pattern´s.
 - SOLID.
+- DDD Bounded Context.
 - Docker.
 - Git e GitHub.
 - Postman.
