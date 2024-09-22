@@ -252,3 +252,25 @@ public toThisNewOne(client: Client): boolean {
     return true;
 }
 ```
+
+### Estratégia de Armazenamento
+
+Por razões, implementei o armazenamento em memória com o objetivo de habilitar os testes da implementação. Todo armazenamento acontece no Repository.ts.
+
+##### PostClientRouter.ts
+
+```
+public run(): void {
+        let body: any = [];
+
+        this.request.on('data', chunk => body.push(chunk))
+            .on('end', () => {
+                body = JSON.parse(Buffer.concat(body).toString());
+                const client: Client = new Client(body.name, body.active, new Date(body.dateOfBirth), body.address, body.contacts);
+                this.adder!.add(client);
+
+            });
+
+        this.response.writeHead(HttpStatusCode.Created, {"Content-Type": "application/json"});
+        this.response.end(JSON.stringify({"message": "Client add with sucess!"}));
+```
