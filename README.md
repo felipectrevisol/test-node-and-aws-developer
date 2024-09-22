@@ -228,7 +228,7 @@ export default class Repository implements Adder, Finder, Updater, Remover {
 
 > [!NOTE]
 > A segregação de interface além de centralizar as responsabilidade únicas ao contexto em si, também isolou o suficiente para que somasse a interface Updater o Pattern Builder com segurança no uso: porque ao instanciar um Repository quando invocado o método alter, a própria IDE lista "apenas" o método toThisNewOne: esta é uma das muitas formas de implementar o padrão Builder para a criação da alteração do objeto Client.
-> Ex: new Repository().alter(antigoEstadoDoCliente).toThisNewOne(novoEstado); a segurança da que me referi é que depois de chamar o método alter não é possível chamar o método add por exemplo: e nisto é possível unir tanto a segregação quanto um design pattern.
+> Ex: `new Repository().alter(antigoEstadoDoCliente).toThisNewOne(novoEstado);` a segurança da que me referi é que depois de chamar o método alter não é possível chamar o método add por exemplo: e nisto é possível unir tanto a segregação quanto um design pattern.
 
 #### Updater.ts
 
