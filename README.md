@@ -280,7 +280,7 @@ public run(): void {
 
 ## Melhorias e Adições que Devem ser Feitas
 
-- Aperfeiçoar o reconhecimento de das URL´s.
+- Aperfeiçoar o reconhecimento das URL´s.
 - Implantar o armazenamento de dados com DynamoDb.
 - Escrever o AWS Cloud​Formation.
 - Corrigir a coerência do PostClientRouter.ts.
