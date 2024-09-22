@@ -273,5 +273,5 @@ public run(): void {
             });
 
         this.response.writeHead(HttpStatusCode.Created, {"Content-Type": "application/json"});
-        this.response.end(JSON.stringify({"message": "Client add with sucess!"}));
+        this.response.end(JSON.stringify({"message": "Client add with success!"}));
 ```
