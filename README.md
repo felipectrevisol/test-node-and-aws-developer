@@ -255,7 +255,8 @@ public toThisNewOne(client: Client): boolean {
 
 ### Estratégia de Armazenamento
 
-Por razões, implementei o armazenamento em memória com o objetivo de habilitar os testes da implementação. Todo armazenamento acontece no Repository.ts.
+> [!NOTE]
+> Por razões, implementei o armazenamento em memória com o objetivo de habilitar os testes da implementação. Todo armazenamento acontece no Repository.ts.
 
 ##### PostClientRouter.ts
 
