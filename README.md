@@ -1,28 +1,28 @@
-# AWS Lambada Mock Ideia - 1.1.2-alpha
+# AWS Lambada Mock Ideia - 1.2.2-alpha
 
 > [!NOTE]
-> Esta implementação é leve o suficiente para rodar com 0.5 de CPU e 10 Mb de RAM.
+> Esta implementação é leve o suficiente para rodar com 0.5 de CPU e 5 Mb de RAM.
 
 ## Docker
 
 ##### Criação Local da Imagem
 
 ```
-docker build -t local/lambda:1.1.2-alpha .
+docker build -t local/lambda:1.2.2-alpha .
 ```
 
 ##### Pull do Docker Repository
 
 ```
-docker pull felipecantotrevisol/lambda:1.1.2-alpha
+docker pull felipecantotrevisol/lambda:1.2.2-alpha
 ```
 
 ##### Executando o Container Local
 
 ```
 docker run -d -p 4000:8000 --cpus=0.5 --memory=10m <image-name>
-Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=10m local/lambda:1.1.2-alpha
-Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=10m felipecantotrevisol/lambda:1.1.2-alpha
+Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=5m local/lambda:1.2.2-alpha
+Ex: docker run -d -p 4000:8000 --cpus=0.5 --memory=5m felipecantotrevisol/lambda:1.2.2-alpha
 ```
 
 ### Testando no Postman
@@ -184,4 +184,42 @@ export default class GetClientRouter extends Router {
         this.response.end(JSON.stringify({path: `${this.path}`, method: `${this.httpMethod}`}));
     }
 }
+```
+
+##### Segregação de Interfaces | Adder | Finder | Remover | Updater
+
+```
+export default interface Adder {
+    add(client: Client): void;
+}
+```
+
+```
+export default interface Finder {
+    bring(client: Client): Client | undefined;
+}
+```
+
+```
+export default interface Remover {
+    delete(client: Client): void;
+}
+```
+
+```
+export default interface Updater {
+    alter(client: Client): Updater;
+    toThisNewOne(client: Client): boolean;
+}
+```
+
+##### Repository.ts
+
+```
+export default class Repository implements Adder, Finder, Updater, Remover {
+
+    private repository: Client[] = [];
+
+    constructor() {
+    }
 ```
