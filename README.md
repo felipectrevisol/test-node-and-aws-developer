@@ -283,7 +283,9 @@ public run(): void {
 - Aperfeiçoar o reconhecimento de das URL´s.
 - Implantar o armazenamento de dados com DynamoDb.
 - Escrever o AWS Cloud​Formation.
+- Corrigir a coerência do PostClientRouter.ts.
 - Implementar testes para a API de Rotas e tudo o que está correlacionado a ela.
+- Finalizar a implementação do CRUD.
 
 # Notas Finais
 
